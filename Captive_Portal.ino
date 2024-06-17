@@ -1,7 +1,12 @@
 //This is the code for PNT form submission 
 //highlights are builtinLED of Nodemcu turn on when connected to wifi , the data user enters on the submission page gets printed on the google sheet date2 present on account adityasharmasheagaon
 
+/* \
+ This code sets up the NodeMCU as a WiFi access point (AP) and DNS server, which allows it to serve a captive portal. However, it doesn't provide internet access to the connected users. This is because the NodeMCU is acting as a standalone access point and not as a bridge to an existing WiFi network with internet access.
 
+To provide internet access, you need to configure the NodeMCU to operate in both Access Point (AP) and Station (STA) mode simultaneously. Here’s how you can modify your code to allow the NodeMCU to connect to an existing WiFi network (providing internet access) while still serving the captive portal:
+
+*/
 
 #include <ESP8266WiFi.h>
 #include <DNSServer.h>
