@@ -16,3 +16,12 @@ Benefits
 Easy Deployment: Simple and cost-effective way to collect user information.
 Real-time Data Logging: Automatically logs data with timestamps for better tracking.
 Customizable: Easily modify the form fields and data handling as per your requirements.
+
+
+
+
+
+
+This code sets up the NodeMCU as a WiFi access point (AP) and DNS server, which allows it to serve a captive portal. However, it doesn't provide internet access to the connected users. This is because the NodeMCU is acting as a standalone access point and not as a bridge to an existing WiFi network with internet access.
+
+To provide internet access, you need to configure the NodeMCU to operate in both Access Point (AP) and Station (STA) mode simultaneously. Here’s how you can modify your code to allow the NodeMCU to connect to an existing WiFi network (providing internet access) while still serving the captive portal:
