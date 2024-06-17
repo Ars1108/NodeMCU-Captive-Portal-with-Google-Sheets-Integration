@@ -1,0 +1,29 @@
+//This is the Gscript ,all the data gets stored on Gsheet date2 present on account adityasharmasheagaon
+function doGet(e) {
+  return handleResponse(e);
+}
+
+function doPost(e) {
+  return handleResponse(e);
+}
+
+function handleResponse(e) {
+  var sheet = SpreadsheetApp.openById('1cNOeaLCsQRWD_idNDoJh-glbSL_q8aRajS6GsOPq5P4').getActiveSheet();
+  
+  var data = JSON.parse(e.postData.contents);
+  var date = new Date();
+  var formattedDate = Utilities.formatDate(date, Session.getScriptTimeZone(), "yyyy-MM-dd");
+  var formattedTime = Utilities.formatDate(date, Session.getScriptTimeZone(), "HH:mm:ss");
+
+  sheet.appendRow([formattedDate, formattedTime, data.name, data.address, data.contact]);
+
+  return ContentService.createTextOutput("Success");
+}
+
+
+
+This is URL(api) of date2 
+https://script.google.com/macros/s/AKfycbztnDJyhiLgCUoEEAii6DfOfj-YCwGQQ1Vl1EPjDNVsMY4-LoQy8CwptFzhnzj5YfjX7g/exec
+
+and the highlights of this project are mention in top comments of code
+
